@@ -6,6 +6,7 @@ Pastas referente ao desenvolvimento de cada aluno
 Alunos atuais:
 Batista
 Yuri
+Derian
 
 Material de Referencia:
 https://www.hackingwithswift.com/100
