@@ -49,7 +49,7 @@ print(resultadoSoma)
 //    funcoes (metodos)
 //}
 
-class SalaDeAula {
+class TurmaAlunos {
     var numeroDeAlunos: Int
     var alunos: [Pessoa]
     
@@ -109,7 +109,7 @@ class SalaDeAula {
     }
 }
 
-var masterClass = SalaDeAula(alunos: [ Pessoa(nomeCompleto: "Yuri Boca", idade: 21),
+var masterClass = TurmaAlunos(alunos: [ Pessoa(nomeCompleto: "Yuri Boca", idade: 21),
                                        Pessoa(nomeCompleto: "Batista Baixo", idade: 22),
                                        deris])
 
@@ -118,7 +118,6 @@ masterClass.removeAluno(nome: deris.nomeCompleto, idade: deris.idade)
 print(masterClass.printaClasse())
 
 masterClass.adicionarAluno(alunoNovo: deris)
-
 
 print(masterClass.printaClasse())
 
