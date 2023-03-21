@@ -76,6 +76,7 @@ class TurmaAlunos {
         atualizaNumeroAlunos()
     }
     
+    
     func removeAluno(nome: String, idade: Int) {
         for aluno in alunos {
             // Verificação de Nome e Idade
