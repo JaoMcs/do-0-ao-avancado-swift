@@ -1,17 +1,22 @@
-import Cocoa
-
 // Mark: - Struct
 
 //struct Nome da Struct {
 //    // Let  ou Var
 //    // Funções <<<
 //}
-struct Pessoa {
+class Pessoa {
     let nomeCompleto: String
     var idade: Int
+    var altura: Double
+
+    init(nomeCompleto: String, idade: Int, altura: Double){
+        self.nomeCompleto = nomeCompleto
+        self.idade = idade
+        self.altura = altura
+    }
 }
 
-var deris = Pessoa(nomeCompleto: "Derian Junior", idade: 25)
+var deris = Pessoa(nomeCompleto: "Derian Junior", idade: 25, altura: 1.84)
 
 // Mark: - Func
 
@@ -28,9 +33,8 @@ var deris = Pessoa(nomeCompleto: "Derian Junior", idade: 25)
 func ImprimeUsuario(usuario: Pessoa) {
     print(usuario.nomeCompleto)
     print(usuario.idade)
+    print(usuario.altura)
 }
-
-ImprimeUsuario(usuario: deris)
 
 func soma(valor1: Int, valor2: Int) -> Int {
     let resultado = valor1 + valor2
@@ -39,7 +43,7 @@ func soma(valor1: Int, valor2: Int) -> Int {
 
 var resultadoSoma = soma(valor1: 1, valor2: 2)
 
-print(resultadoSoma)
+//print(resultadoSoma)
 
 // Mark: - Class
 
@@ -59,10 +63,10 @@ class TurmaAlunos {
     }
     
     
-    func adicionarAluno(nome: String, idade: Int) {
+    func adicionarAluno(nome: String, idade: Int, altura: Double) {
         // Bloco de codigo
         // Criar o struct pessoa
-        let alunoNovo = Pessoa(nomeCompleto: nome, idade: idade)
+        let alunoNovo = Pessoa(nomeCompleto: nome, idade: idade, altura: altura)
         
         // append no alunos com o objeto pessoa
         alunos.append(alunoNovo)
@@ -97,10 +101,11 @@ class TurmaAlunos {
     }
     
     func printaClasse() {
-        print("\n\nTurma da Sala de Aula\nalunos:\n")
+        print("\n\nTurma da Sala de Aula\nAlunos:")
         for aluno in alunos {
             print(aluno.nomeCompleto)
             print(aluno.idade)
+            print(aluno.altura)
         }
         print("Numero de integrantes na turma: \(numeroDeAlunos)")
     }
@@ -108,10 +113,21 @@ class TurmaAlunos {
     func atualizaNumeroAlunos() {
         numeroDeAlunos = alunos.count
     }
+    
+
+    func modificaIdade(nome: String, idadeAtual: Int){
+        for aluno in alunos{
+            if (aluno.nomeCompleto == nome){
+                aluno.idade = idadeAtual
+            }
+        }
+    }
+    
+    
 }
 
-var masterClass = TurmaAlunos(alunos: [ Pessoa(nomeCompleto: "Yuri Boca", idade: 21),
-                                       Pessoa(nomeCompleto: "Batista Baixo", idade: 22),
+var masterClass = TurmaAlunos(alunos: [ Pessoa(nomeCompleto: "Yuri Boca", idade: 21, altura: 1.90),
+                                       Pessoa(nomeCompleto: "Batista Baixo", idade: 22, altura: 1.85),
                                        deris])
 
 masterClass.removeAluno(nome: deris.nomeCompleto, idade: deris.idade)
@@ -120,9 +136,12 @@ print(masterClass.printaClasse())
 
 masterClass.adicionarAluno(alunoNovo: deris)
 
+masterClass.modificaIdade(nome: "Yuri Boca", idadeAtual: 20) // Teste: Idade modificada
+
 print(masterClass.printaClasse())
 
 
 // Cada um vai ter que pensar e desenvolver 2 metodos a mais na classe
 // Metodo = função dentro da classe
-// Pelo menos 1 variavel a mais
+// Pelo menos 1 variavel a mais (OK)
+
