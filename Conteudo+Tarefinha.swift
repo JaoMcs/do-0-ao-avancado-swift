@@ -56,6 +56,7 @@ var resultadoSoma = soma(valor1: 1, valor2: 2)
 class TurmaAlunos {
     var numeroDeAlunos: Int
     var alunos: [Pessoa]
+    var mediaAltura: Double = 0
     
     init(alunos: [Pessoa]) {
         self.alunos = alunos
@@ -123,6 +124,13 @@ class TurmaAlunos {
         }
     }
     
+    func calculaMediaAltura(){
+        for aluno in alunos{
+            mediaAltura += aluno.altura
+        }
+        mediaAltura /= Double(numeroDeAlunos)
+        print(mediaAltura)
+    }
     
 }
 
@@ -139,6 +147,8 @@ masterClass.adicionarAluno(alunoNovo: deris)
 masterClass.modificaIdade(nome: "Yuri Boca", idadeAtual: 20) // Teste: Idade modificada
 
 print(masterClass.printaClasse())
+
+masterClass.calculaMediaAltura()
 
 
 // Cada um vai ter que pensar e desenvolver 2 metodos a mais na classe
