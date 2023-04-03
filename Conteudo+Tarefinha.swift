@@ -118,7 +118,7 @@ class TurmaAlunos {
 
     func modificaIdade(nome: String, idadeAtual: Int){
         for aluno in alunos{
-            if (aluno.nomeCompleto == nome){
+            if aluno.nomeCompleto == nome {
                 aluno.idade = idadeAtual
             }
         }
@@ -144,7 +144,7 @@ print(masterClass.printaClasse())
 
 masterClass.adicionarAluno(alunoNovo: deris)
 
-masterClass.modificaIdade(nome: "Yuri Boca", idadeAtual: 20) // Teste: Idade modificada
+masterClass.modificaIdade(nome: "Yuri Boca", idadeAtual: 20) 
 
 print(masterClass.printaClasse())
 
