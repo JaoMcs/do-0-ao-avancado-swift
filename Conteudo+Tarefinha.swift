@@ -152,5 +152,6 @@ masterClass.calculaMediaAltura()
 
 
 // Cada um vai ter que pensar e desenvolver 2 metodos a mais na classe
+// Metodo = Função dentro da classe
 // Pelo menos 1 variavel a mais
 
